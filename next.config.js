@@ -15,6 +15,7 @@ const nextConfig = {
   // ESLint
   eslint: {
     dirs: ['app', 'components'],
+    ignoreDuringBuilds: false,
   },
   
   // Image optimization

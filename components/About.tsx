@@ -19,7 +19,7 @@ export default function About() {
               Family-Owned, Built on Trust
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              M & S Windows & Conservatory Ltd is a family-run business established over 20 years ago. Founded by Steve and Louise Wright, we've built our reputation on delivering premium-quality installations and exceptional customer service.
+              M & S Windows & Conservatory Ltd is a family-run business established over 20 years ago. Founded by Steve and Louise Wright, we&apos;ve built our reputation on delivering premium-quality installations and exceptional customer service.
             </p>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Every project is handled with care by our experienced fitting teams. We partner with top manufacturers to ensure you receive only the highest quality materials and installations that stand the test of time.

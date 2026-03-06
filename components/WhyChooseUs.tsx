@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
             Why Choose M & S Windows?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Here's what sets us apart from the rest
+            Here&apos;s what sets us apart from the rest
           </p>
         </motion.div>
 

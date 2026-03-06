@@ -62,9 +62,8 @@ const metadata: Metadata = {
 
   // Icons
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
   },
   manifest: '/manifest.json',
 

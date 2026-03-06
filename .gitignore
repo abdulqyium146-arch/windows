@@ -36,6 +36,9 @@ yarn-error.log*
 # OS
 Thumbs.db
 
+# TypeScript build info
+tsconfig.tsbuildinfo
+
 # Cache
 .eslintcache
 

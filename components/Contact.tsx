@@ -145,7 +145,7 @@ export default function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-50 text-green-700 rounded-lg text-sm"
                 >
-                  ✓ Thank you! We'll contact you within 24 hours.
+                  ✓ Thank you! We&apos;ll contact you within 24 hours.
                 </motion.div>
               )}
             </form>
