@@ -99,19 +99,21 @@ const nextConfig = {
   // Redirects
   redirects: async () => {
     return [
+      // Old alternative URL paths redirect to new proper pages
       {
         source: '/contact-us',
-        destination: '/#contact',
+        destination: '/contact',
         permanent: true,
       },
       {
         source: '/our-services',
-        destination: '/#services',
+        destination: '/services',
         permanent: true,
       },
+      // Keep old gallery paths redirecting to gallery page
       {
         source: '/gallery/:path*',
-        destination: '/#gallery',
+        destination: '/gallery',
         permanent: true,
       },
     ];

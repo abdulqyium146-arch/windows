@@ -47,25 +47,25 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="#services"
+              href="/services"
               className="text-gray-700 hover:text-primary font-medium transition-colors"
             >
               Services
             </Link>
             <Link
-              href="#gallery"
+              href="/gallery"
               className="text-gray-700 hover:text-primary font-medium transition-colors"
             >
               Gallery
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="text-gray-700 hover:text-primary font-medium transition-colors"
             >
               About
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="text-gray-700 hover:text-primary font-medium transition-colors"
             >
               Contact
@@ -109,28 +109,28 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="#services"
+              href="/services"
               className="block py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link
-              href="#gallery"
+              href="/gallery"
               className="block py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               Gallery
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="block py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="block py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsOpen(false)}
             >

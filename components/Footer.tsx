@@ -59,7 +59,7 @@ export default function Footer() {
                 (service) => (
                   <li key={service}>
                     <a
-                      href="#services"
+                      href="/services"
                       className="text-blue-100 hover:text-white flex items-center gap-2 transition-colors"
                     >
                       <FiArrowRight size={16} />
@@ -81,17 +81,17 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-blue-100 hover:text-white transition-colors">
+                <a href="/about" className="text-blue-100 hover:text-white transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="text-blue-100 hover:text-white transition-colors">
+                <a href="/gallery" className="text-blue-100 hover:text-white transition-colors">
                   Gallery
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-blue-100 hover:text-white transition-colors">
+                <a href="/contact" className="text-blue-100 hover:text-white transition-colors">
                   Contact
                 </a>
               </li>
