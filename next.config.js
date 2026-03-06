@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Output and build
-  outputFileTracingRoot: './',
+  outputFileTracingRoot: require('path').resolve(__dirname),
   
   // Core optimizations
   compress: true,

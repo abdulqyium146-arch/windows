@@ -44,7 +44,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href="#contact"
+                href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-cta flex items-center justify-center gap-2"

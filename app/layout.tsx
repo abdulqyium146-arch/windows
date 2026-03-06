@@ -4,8 +4,6 @@ import './globals.css';
 const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: '#003366',
   colorScheme: 'light',
 };
@@ -47,7 +45,7 @@ const metadata: Metadata = {
   ],
   category: 'Business',
   classification: 'Home Improvement',
-  
+
   // Robots & Indexing
   robots: {
     index: true,
@@ -61,7 +59,7 @@ const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  
+
   // Icons
   icons: {
     icon: '/favicon.ico',
@@ -69,7 +67,7 @@ const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
-  
+
   // OpenGraph
   openGraph: {
     type: 'website',
@@ -96,7 +94,7 @@ const metadata: Metadata = {
     ],
     countryName: 'United Kingdom',
   },
-  
+
   // Twitter
   twitter: {
     card: 'summary_large_image',
@@ -109,21 +107,20 @@ const metadata: Metadata = {
     creator: '@mandswindows',
     site: '@mandswindows',
   },
-  
+
   // Verification
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
     other: {
-      'facebook-domain-verification': process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION || 'facebook-domain-verification',
+      'facebook-domain-verification': process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION || '',
     },
   },
-  
+
   // Alternates
   alternates: {
     canonical: 'https://mandswindows.co.uk',
     languages: {
       'en-GB': 'https://mandswindows.co.uk',
-      'en-US': 'https://mandswindows.co.uk',
     },
   },
 };
@@ -136,10 +133,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -152,7 +148,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#003366" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)" />
         <link rel="manifest" href="/manifest.json" />
-        
+
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
           <>
@@ -165,19 +161,19 @@ export default function RootLayout({
             `}} />
           </>
         )}
-        
+
         {/* LocalBusiness Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              '@id': 'https://mandswindows.co.uk',
+              '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+              '@id': 'https://mandswindows.co.uk/#business',
               'name': 'M & S Windows & Conservatory Ltd',
               'image': 'https://mandswindows.co.uk/og-image.jpg',
-              'description': 'Family-run specialist installers of uPVC windows, doors, conservatories, and custom glass designs in Manchester.',
-              'telephone': '0161 286 8256',
+              'description': 'Family-run specialist installers of uPVC windows, doors, conservatories, leaded windows, porches and door canopies in Manchester.',
+              'telephone': '+441612868256',
               'email': 'info@mandswindows.co.uk',
               'url': 'https://mandswindows.co.uk',
               'address': {
@@ -205,27 +201,42 @@ export default function RootLayout({
                 'https://www.facebook.com/mandswindows',
                 'https://www.instagram.com/mandswindows',
               ],
-              'priceRange': '$$$',
+              'priceRange': '££',
+              'currenciesAccepted': 'GBP',
+              'paymentAccepted': 'Cash, Credit Card, Bank Transfer',
               'areaServed': [
-                {
-                  '@type': 'City',
-                  'name': 'Manchester',
-                },
-                {
-                  '@type': 'Region',
-                  'name': 'Greater Manchester',
-                },
+                { '@type': 'City', 'name': 'Manchester' },
+                { '@type': 'City', 'name': 'Chorlton' },
+                { '@type': 'City', 'name': 'Didsbury' },
+                { '@type': 'City', 'name': 'Altrincham' },
+                { '@type': 'City', 'name': 'Stockport' },
+                { '@type': 'City', 'name': 'Sale' },
+                { '@type': 'AdministrativeArea', 'name': 'Greater Manchester' },
               ],
               'contactPoint': {
                 '@type': 'ContactPoint',
-                'contactType': 'Sales',
-                'telephone': '0161 286 8256',
+                'contactType': 'customer service',
+                'telephone': '+441612868256',
+                'email': 'info@mandswindows.co.uk',
                 'areaServed': 'GB',
+                'availableLanguage': 'English',
+              },
+              'hasOfferCatalog': {
+                '@type': 'OfferCatalog',
+                'name': 'Window & Door Installation Services',
+                'itemListElement': [
+                  { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'uPVC Windows Manchester', 'url': 'https://mandswindows.co.uk/windows-manchester' } },
+                  { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Doors Manchester', 'url': 'https://mandswindows.co.uk/doors-manchester' } },
+                  { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Conservatories Manchester', 'url': 'https://mandswindows.co.uk/conservatories-manchester' } },
+                  { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Leaded Windows Manchester', 'url': 'https://mandswindows.co.uk/leaded-windows-manchester' } },
+                  { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Porches Manchester', 'url': 'https://mandswindows.co.uk/porches-manchester' } },
+                  { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Door Canopies Manchester', 'url': 'https://mandswindows.co.uk/door-canopies-manchester' } },
+                ],
               },
             }),
           }}
         />
-        
+
         {/* Organization Schema */}
         <script
           type="application/ld+json"
@@ -233,11 +244,16 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
+              '@id': 'https://mandswindows.co.uk/#organization',
               'name': 'M & S Windows & Conservatory Ltd',
               'url': 'https://mandswindows.co.uk',
-              'logo': 'https://mandswindows.co.uk/logo.png',
-              'description': 'Premium uPVC windows, doors, and conservatories installer in Manchester',
-              'founder': ['Steve Wright', 'Louise Wright'],
+              'logo': {
+                '@type': 'ImageObject',
+                'url': 'https://mandswindows.co.uk/favicon.svg',
+                'width': 512,
+                'height': 512,
+              },
+              'description': 'Premium uPVC windows, doors, and conservatories installer in Manchester since 1999.',
               'foundingDate': '1999',
               'address': {
                 '@type': 'PostalAddress',
@@ -249,8 +265,9 @@ export default function RootLayout({
               },
               'contactPoint': {
                 '@type': 'ContactPoint',
-                'contactType': 'Customer Support',
-                'telephone': '0161 286 8256',
+                'contactType': 'customer service',
+                'telephone': '+441612868256',
+                'email': 'info@mandswindows.co.uk',
               },
               'sameAs': [
                 'https://www.facebook.com/mandswindows',
@@ -259,7 +276,25 @@ export default function RootLayout({
             }),
           }}
         />
-        
+
+        {/* WebSite Schema with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              '@id': 'https://mandswindows.co.uk/#website',
+              'url': 'https://mandswindows.co.uk',
+              'name': 'M & S Windows & Conservatory Ltd',
+              'description': 'Premium uPVC windows, doors and conservatories in Manchester',
+              'publisher': {
+                '@id': 'https://mandswindows.co.uk/#organization',
+              },
+            }),
+          }}
+        />
+
         {/* BreadcrumbList Schema */}
         <script
           type="application/ld+json"
@@ -278,19 +313,25 @@ export default function RootLayout({
                   '@type': 'ListItem',
                   'position': 2,
                   'name': 'Services',
-                  'item': 'https://mandswindows.co.uk/#services',
+                  'item': 'https://mandswindows.co.uk/services',
                 },
                 {
                   '@type': 'ListItem',
                   'position': 3,
                   'name': 'Gallery',
-                  'item': 'https://mandswindows.co.uk/#gallery',
+                  'item': 'https://mandswindows.co.uk/gallery',
                 },
                 {
                   '@type': 'ListItem',
                   'position': 4,
+                  'name': 'About',
+                  'item': 'https://mandswindows.co.uk/about',
+                },
+                {
+                  '@type': 'ListItem',
+                  'position': 5,
                   'name': 'Contact',
-                  'item': 'https://mandswindows.co.uk/#contact',
+                  'item': 'https://mandswindows.co.uk/contact',
                 },
               ],
             }),

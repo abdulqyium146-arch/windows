@@ -25,17 +25,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/contact-us",
-      "destination": "/#contact",
-      "permanent": true
-    },
-    {
-      "source": "/services",
-      "destination": "/#services",
-      "permanent": true
-    }
   ]
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   FiHome,
@@ -13,33 +14,45 @@ import {
 const services = [
   {
     icon: FiHome,
-    title: 'Windows',
+    title: 'Windows Manchester',
     description: 'Energy-efficient uPVC windows with advanced glazing technology. Custom designs to match your home style.',
+    href: '/windows-manchester',
+    linkText: 'Windows Manchester',
   },
   {
     icon: FiGift,
-    title: 'Doors',
+    title: 'Doors Manchester',
     description: 'Premium entrance and patio doors. Secure, stylish, and weather-resistant solutions for your home.',
+    href: '/doors-manchester',
+    linkText: 'Doors Manchester',
   },
   {
     icon: FiBox,
-    title: 'Conservatories',
+    title: 'Conservatories Manchester',
     description: 'Bespoke conservatories that extend your living space. Fully insulated and maintenance-free designs.',
+    href: '/conservatories-manchester',
+    linkText: 'Conservatories Manchester',
   },
   {
     icon: FiGrid,
-    title: 'Leaded Windows',
+    title: 'Leaded Windows Manchester',
     description: 'Traditional leaded glass designs. Perfect for period properties and classic aesthetics.',
+    href: '/leaded-windows-manchester',
+    linkText: 'Leaded Windows Manchester',
   },
   {
     icon: FiAward,
-    title: 'Porches',
+    title: 'Porches Manchester',
     description: 'Elegant entrance porches that add character and protection. Custom-built to your specifications.',
+    href: '/porches-manchester',
+    linkText: 'Porches Manchester',
   },
   {
     icon: FiZap,
-    title: 'Door Canopies',
+    title: 'Door Canopies Manchester',
     description: 'Durable GRP door canopies available in grey, terracotta, or red brick finishes. Long-lasting quality.',
+    href: '/door-canopies-manchester',
+    linkText: 'Door Canopies Manchester',
   },
 ];
 
@@ -111,11 +124,14 @@ export default function Services() {
                 <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="mt-4 text-cta font-semibold cursor-pointer inline-block"
-                >
-                  Learn more →
+                <motion.div whileHover={{ x: 5 }} className="mt-4 inline-block">
+                  <Link
+                    href={service.href}
+                    className="text-cta font-semibold hover:underline"
+                    aria-label={`Learn more about ${service.linkText}`}
+                  >
+                    Learn more about {service.linkText} &rarr;
+                  </Link>
                 </motion.div>
               </motion.div>
             );
