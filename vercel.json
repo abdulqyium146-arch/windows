@@ -6,11 +6,6 @@
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://mandswindows.co.uk"
   },
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",
