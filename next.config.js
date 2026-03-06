@@ -116,18 +116,6 @@ const nextConfig = {
       },
     ];
   },
-  
-  // Rewrites
-  rewrites: async () => {
-    return {
-      beforeFiles: [
-        {
-          source: '/sitemap.xml',
-          destination: '/api/sitemap',
-        },
-      ],
-    };
-  },
 };
 
 module.exports = nextConfig;
