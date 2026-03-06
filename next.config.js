@@ -128,11 +128,6 @@ const nextConfig = {
       ],
     };
   },
-  
-  // Environment variables
-  env: {
-    NEXT_PUBLIC_SITE_URL: 'https://mandswindows.co.uk',
-  },
 };
 
 module.exports = nextConfig;
