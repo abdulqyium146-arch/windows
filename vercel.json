@@ -4,19 +4,7 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "env": {
-    "NEXT_PUBLIC_SITE_URL": {
-      "required": true,
-      "default": "https://mandswindows.co.uk"
-    },
-    "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID": {
-      "required": false
-    },
-    "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION": {
-      "required": false
-    },
-    "NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION": {
-      "required": false
-    }
+    "NEXT_PUBLIC_SITE_URL": "https://mandswindows.co.uk"
   },
   "functions": {
     "api/**/*.ts": {
